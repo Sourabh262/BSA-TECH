@@ -1,10 +1,9 @@
 import express, { Request, Response } from 'express';
 import { upload } from '../utils/cloudinary';
-import { protect } from '../middleware/authMiddleware';
 
 const router = express.Router();
 
-router.post('/', protect, upload.single('image'), (req: Request, res: Response): void => {
+router.post('/', upload.single('image'), (req: Request, res: Response): void => {
   if (!req.file) {
     res.status(400).json({ message: 'No image provided' });
     return;
