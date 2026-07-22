@@ -23,7 +23,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
                 name: user.name,
                 email: user.email,
                 role: user.role,
-                token: generateToken(user._id as string),
+                token: generateToken(String(user._id)),
             });
         } else {
             res.status(401).json({ message: 'Invalid email or password' });
@@ -60,7 +60,7 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
                 name: user.name,
                 email: user.email,
                 role: user.role,
-                token: generateToken(user._id as string),
+                token: generateToken(String(user._id)),
             });
         } else {
             res.status(400).json({ message: 'Invalid user data' });
