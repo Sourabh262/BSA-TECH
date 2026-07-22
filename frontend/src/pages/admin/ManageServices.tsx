@@ -24,7 +24,31 @@ const ManageServices = () => {
     icon: 'Code',
     features: ['Feature 1', 'Feature 2'],
     technologies: ['React', 'Node'],
+    image: '',
   });
+
+  const [uploading, setUploading] = useState(false);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    const formDataUpload = new FormData();
+    formDataUpload.append('image', file);
+
+    try {
+      const { data } = await api.post('/upload', formDataUpload, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      setFormData(prev => ({ ...prev, image: data.url }));
+    } catch (error) {
+      console.error('Upload failed', error);
+      alert('Failed to upload image');
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const fetchServices = async () => {
     try {
@@ -144,6 +168,24 @@ const ManageServices = () => {
                   value={formData.shortDescription}
                   onChange={(e) => setFormData({...formData, shortDescription: e.target.value})}
                 />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Service Image</label>
+                <div className="flex items-center gap-4">
+                  {formData.image && (
+                    <img src={formData.image} alt="Preview" className="h-16 w-16 object-cover rounded-lg border border-slate-200" />
+                  )}
+                  <div className="flex-1">
+                    <input 
+                      type="file" 
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      disabled={uploading}
+                      className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100 disabled:opacity-50"
+                    />
+                    {uploading && <p className="text-xs text-emerald-600 mt-1">Uploading to Cloudinary...</p>}
+                  </div>
+                </div>
               </div>
               <div className="flex justify-end gap-3 pt-4 border-t border-slate-100">
                 <button 

@@ -20,6 +20,8 @@ const productSchema: Schema = new Schema({
     name: { type: String, required: true },
     slug: { type: String, required: true, unique: true },
     description: { type: String, required: true },
+    category: { type: String, default: 'Software' },
+    image: { type: String },
     features: [{ type: String }],
     benefits: [{ type: String }],
     modules: [{ type: String }],
