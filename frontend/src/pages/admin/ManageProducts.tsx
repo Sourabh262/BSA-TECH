@@ -40,9 +40,9 @@ const ManageProducts = () => {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       setFormData(prev => ({ ...prev, image: data.url }));
-    } catch (error) {
+    } catch (error: any) {
       console.error('Upload failed', error);
-      alert('Failed to upload image');
+      alert('Failed to upload image: ' + (error.response?.data?.error || error.message));
     } finally {
       setUploading(false);
     }
