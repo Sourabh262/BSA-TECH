@@ -4,6 +4,7 @@ import cors from 'cors';
 import serviceRoutes from './routes/serviceRoutes';
 import productRoutes from './routes/productRoutes';
 import authRoutes from './routes/authRoutes';
+import uploadRoutes from './routes/uploadRoutes';
 
 const app: Application = express();
 
@@ -19,6 +20,7 @@ app.get('/api', (req: Request, res: Response) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/services', serviceRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/upload', uploadRoutes);
 
 // Error handling middleware can go here
 

@@ -60,7 +60,7 @@ const ManageServices = () => {
         <h2 className="text-2xl font-bold text-slate-800">Manage Services</h2>
         <button 
           onClick={() => setIsModalOpen(true)}
-          className="flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+          className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
         >
           <Plus size={20} /> Add New Service
         </button>
@@ -155,7 +155,7 @@ const ManageServices = () => {
                 </button>
                 <button 
                   type="submit"
-                  className="px-4 py-2 bg-primary-600 text-white font-medium hover:bg-primary-700 rounded-lg"
+                  className="px-4 py-2 bg-emerald-600 text-white font-medium hover:bg-emerald-700 rounded-lg"
                 >
                   Save Service
                 </button>

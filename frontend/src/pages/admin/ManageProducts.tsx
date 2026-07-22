@@ -46,9 +46,10 @@ const ManageProducts = () => {
       setIsModalOpen(false);
       fetchProducts();
       setFormData({ ...formData, name: '', slug: '', description: '' });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Failed to create product', error);
-      alert('Error creating product');
+      const errorMsg = error.response?.data?.message || error.response?.data?.error || error.message;
+      alert(`Error creating product: ${errorMsg}`);
     }
   };
 

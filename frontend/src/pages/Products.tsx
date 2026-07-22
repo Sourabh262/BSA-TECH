@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Box, ExternalLink, Loader2 } from 'lucide-react';
+import { Box, ExternalLink, Loader2, ArrowRight } from 'lucide-react';
 import api from '../utils/api';
 
 interface Product {
@@ -9,6 +9,7 @@ interface Product {
   name: string;
   slug: string;
   description: string;
+  category?: string;
 }
 
 const fallbackProducts = [
@@ -41,68 +42,50 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="pt-24 pb-20 bg-white min-h-screen">
-      <div className="container mx-auto px-4 md:px-6">
-        
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h1 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-slate-800 mb-6"
-          >
-            Our <span className="text-emerald-600">Products</span>
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-slate-600"
-          >
-            Ready-to-deploy software products that accelerate your business operations and reduce time to market.
-          </motion.p>
+    <div className="pt-24 pb-16 bg-white min-h-screen">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Our Products</h1>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            Ready-to-deploy software products designed to accelerate your business growth.
+          </p>
         </div>
 
         {loading ? (
           <div className="flex justify-center py-20">
-            <Loader2 className="animate-spin text-emerald-500" size={48} />
+            <Loader2 className="animate-spin text-emerald-600" size={48} />
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-10">
             {products.map((product, index) => (
               <motion.div
                 key={product._id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group rounded-2xl overflow-hidden shadow-lg border border-slate-100 flex flex-col h-full"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="group rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all"
               >
-                <div className="h-48 overflow-hidden bg-slate-100 relative">
-                  <div className="absolute inset-0 bg-emerald-600/20 mix-blend-multiply group-hover:bg-emerald-600/0 transition-colors duration-500 z-10" />
-                  <img 
-                    src={(product as any).image || fallbackProducts[index % fallbackProducts.length].image} 
-                    alt={product.name}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  />
+                <div className="h-64 bg-slate-100 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-blue-500/20 group-hover:scale-105 transition-transform duration-500"></div>
+                  <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold text-slate-700">
+                    {product.category || 'Software'}
+                  </div>
                 </div>
-                <div className="p-8 flex flex-col flex-1 bg-white">
-                  <h3 className="text-2xl font-bold text-slate-800 mb-4">{product.name}</h3>
-                  <p className="text-slate-600 mb-8 flex-1 leading-relaxed">
+                
+                <div className="p-8">
+                  <h3 className="text-3xl font-bold text-slate-800 mb-4">{product.name}</h3>
+                  <p className="text-slate-600 mb-8 text-lg line-clamp-3">
                     {product.description}
                   </p>
-                  <Link 
-                    to={`/products/${product.slug}`}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-                  >
-                    View Product Details
-                    <ExternalLink size={18} />
-                  </Link>
+                  
+                  <a href={`/products/${product.slug}`} className="inline-flex items-center justify-center w-full bg-slate-900 text-white font-semibold py-4 rounded-xl hover:bg-emerald-600 transition-colors">
+                    Explore Product <ArrowRight size={20} className="ml-2 group-hover:translate-x-2 transition-transform" />
+                  </a>
                 </div>
               </motion.div>
             ))}
           </div>
         )}
-
       </div>
     </div>
   );
