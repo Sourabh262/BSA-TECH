@@ -3,8 +3,8 @@ import jwt from 'jsonwebtoken';
 import User from '../models/User';
 
 const generateToken = (id: string) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET || 'secret', {
-        expiresIn: process.env.JWT_EXPIRE || '30d',
+    return jwt.sign({ id }, (process.env.JWT_SECRET || 'secret') as jwt.Secret, {
+        expiresIn: (process.env.JWT_EXPIRE || '30d') as any,
     });
 };
 
@@ -23,7 +23,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
                 name: user.name,
                 email: user.email,
                 role: user.role,
-                token: generateToken(user._id),
+                token: generateToken(user._id as string),
             });
         } else {
             res.status(401).json({ message: 'Invalid email or password' });
@@ -60,7 +60,7 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
                 name: user.name,
                 email: user.email,
                 role: user.role,
-                token: generateToken(user._id),
+                token: generateToken(user._id as string),
             });
         } else {
             res.status(400).json({ message: 'Invalid user data' });
