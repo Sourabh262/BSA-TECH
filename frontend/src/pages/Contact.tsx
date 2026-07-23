@@ -10,7 +10,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
-  
+
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -46,7 +46,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-800 mb-2">Our Location</h3>
-                  <p className="text-slate-600">123 Tech Boulevard<br />Silicon Valley, CA 94025</p>
+                  <p className="text-slate-600">Krishnampuram, Prem Nagar, Korsand, Ghori Road,<br />Shantipuram, Phaphamau, Prayagraj, UP-211013</p>
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-800 mb-2">Phone Number</h3>
-                  <p className="text-slate-600">+1 (555) 123-4567<br />Mon-Fri 9am-6pm PST</p>
+                  <p className="text-slate-600">+918840854007<br />Mon-Fri 9am-6pm PST</p>
                 </div>
               </div>
             </div>
@@ -95,50 +95,50 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
-                      <input 
+                      <input
                         type="text" required
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none transition-all"
                         placeholder="John Doe"
-                        value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})}
+                        value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })}
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
-                      <input 
+                      <input
                         type="email" required
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none transition-all"
                         placeholder="john@example.com"
-                        value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})}
+                        value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })}
                       />
                     </div>
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Phone (Optional)</label>
-                      <input 
+                      <input
                         type="tel"
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none transition-all"
                         placeholder="+1 (555) 000-0000"
-                        value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})}
+                        value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })}
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Subject</label>
-                      <input 
+                      <input
                         type="text" required
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none transition-all"
                         placeholder="Project Inquiry"
-                        value={formData.subject} onChange={e => setFormData({...formData, subject: e.target.value})}
+                        value={formData.subject} onChange={e => setFormData({ ...formData, subject: e.target.value })}
                       />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Message</label>
-                    <textarea 
+                    <textarea
                       required rows={5}
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none transition-all resize-none"
                       placeholder="Tell us about your project requirements..."
-                      value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}
+                      value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })}
                     />
                   </div>
                   {status === 'error' && (
@@ -146,7 +146,7 @@ const Contact = () => {
                       Failed to send message. Please try again or email us directly.
                     </div>
                   )}
-                  <button 
+                  <button
                     type="submit" disabled={status === 'loading'}
                     className="w-full py-4 bg-emerald-600 text-white font-bold rounded-xl hover:bg-slate-900 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
                   >
