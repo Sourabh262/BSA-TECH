@@ -24,10 +24,17 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'About Us', 'Services', 'Portfolio', 'Team', 'Contact'].map((link) => (
-                <li key={link}>
-                  <Link to={`/${link.toLowerCase().replace(' ', '-')}`} className="hover:text-primary-500 transition-colors">
-                    {link}
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About Us', path: '/about' },
+                { name: 'Services', path: '/services' },
+                { name: 'Portfolio', path: '/portfolio' },
+                { name: 'Team', path: '/team' },
+                { name: 'Contact', path: '/contact' }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link to={link.path} className="hover:text-primary-500 transition-colors">
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -56,7 +63,7 @@ const Footer = () => {
             &copy; 2020 | BSA TECH | Designed by BSA TEAM
           </p>
           <p className="text-xs text-slate-500 max-w-4xl leading-relaxed">
-            Use of this Site is subject to express <Link to="/terms" className="text-primary-500 hover:underline">Terms of Use</Link>. By using this Site, you signify that you agree to be bound by these Terms of Use, which were last revised on January 10, 2018. <Link to="/privacy" className="text-primary-500 hover:underline">Legal & Privacy Policy</Link> | <Link to="/legal" className="text-primary-500 hover:underline">Legal Agreements</Link>
+            Use of this Site is subject to express <Link to="/terms" className="text-primary-500 hover:underline">Terms of Use</Link>. By using this Site, you signify that you agree to be bound by these Terms of Use, which were last revised on January 10, 2018. <Link to="/privacy" className="text-primary-500 hover:underline">Legal & Privacy Policy</Link>
           </p>
         </div>
       </div>
