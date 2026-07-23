@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 mb-6 inline-flex">
@@ -48,24 +48,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Contact Info</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={20} className="text-primary-500 shrink-0 mt-1" />
-                <span>123 Tech Boulevard, Silicon Valley, CA 94043</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={20} className="text-primary-500 shrink-0" />
-                <span>+1 (555) 123-4567</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={20} className="text-primary-500 shrink-0" />
-                <span>hello@bsatech.com</span>
-              </li>
-            </ul>
-          </div>
+
         </div>
         
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
