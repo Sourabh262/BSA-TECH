@@ -12,7 +12,12 @@ import testimonialRoutes from './routes/testimonialRoutes';
 const app: Application = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: ['https://bsa-tech.vercel.app', 'http://localhost:5173', 'http://localhost:5000'],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Routes
