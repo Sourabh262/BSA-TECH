@@ -10,6 +10,7 @@ import ManageProducts from './pages/admin/ManageProducts';
 import ManagePortfolio from './pages/admin/ManagePortfolio';
 import ManageInquiries from './pages/admin/ManageInquiries';
 import ManageTestimonials from './pages/admin/ManageTestimonials';
+import Settings from './pages/admin/Settings';
 import Services from './pages/Services';
 import Products from './pages/Products';
 import Portfolio from './pages/Portfolio';
@@ -67,6 +68,7 @@ function App() {
           <Route path="portfolio" element={<ManagePortfolio />} />
           <Route path="inquiries" element={<ManageInquiries />} />
           <Route path="testimonials" element={<ManageTestimonials />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
     </Router>
