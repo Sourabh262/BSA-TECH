@@ -13,8 +13,9 @@ import ManageTestimonials from './pages/admin/ManageTestimonials';
 import Services from './pages/Services';
 import Products from './pages/Products';
 import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
 import About from './pages/About';
+import Team from './pages/Team';
+import Contact from './pages/Contact';
 
 const NotFound = () => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
@@ -44,8 +45,9 @@ function App() {
           <Route path="services" element={<Services />} />
           <Route path="products" element={<Products />} />
           <Route path="portfolio" element={<Portfolio />} />
-          <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
+          <Route path="team" element={<Team />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>
         
