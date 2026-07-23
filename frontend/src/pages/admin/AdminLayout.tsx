@@ -17,7 +17,7 @@ const AdminLayout = () => {
     { name: 'Products', path: '/admin/products', icon: <Box size={20} /> },
     { name: 'Portfolio', path: '/admin/portfolio', icon: <Briefcase size={20} /> },
     { name: 'Inquiries', path: '/admin/inquiries', icon: <Mail size={20} /> },
-    { name: 'Blogs', path: '/admin/blogs', icon: <FileText size={20} /> },
+    { name: 'Testimonials', path: '/admin/testimonials', icon: <FileText size={20} /> },
     { name: 'Settings', path: '/admin/settings', icon: <Settings size={20} /> },
   ];
 
