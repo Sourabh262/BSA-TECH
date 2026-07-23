@@ -16,44 +16,36 @@ interface Product {
 const fallbackProducts = [
   { 
     _id: '1', 
-    name: 'SaĝoKomm - A School Software on SaaS', 
-    slug: 'sagokomm', 
+    name: 'School Management Software', 
+    slug: 'school-management', 
     category: 'Education ERP',
-    description: `SaĝoKomm - 'Saĝo' Means 'Wisdom - Knowledge' and 'Komm' Means 'Communications' refers as 'A 360 degree Communication of the Knowledge and Information between the Students, Parents, Teachers, Principal and Schools'.
-
-SaĝoKomm offers a unique blend to drastically reduce the Total Cost of Ownership while providing the impetus for business growth, results based computing and managed information delivery. SaĝoKomm provides a 360 degree view with all the features and functionalities of the school preferences. SaĝoKomm is the complete School/College Management Integrated Software that caters across all the features and functionalities of schools and college which they require to operate.
-
-One Click Result Oriented Based Reports. Digital Marksheet based on CBSE, ICSE and State Board with Automatic Calculations. Automatic Notifications through SMS and Secure Online Data.
-
-Functionalities & Features:
-• 24*7*365 Automatic SMS Notifications
-• CBSE, ICSE Based Digital Marksheet
-• Scholastic n Co-Scholastic Auto Calculations
-• Marksheet Printing Features
-• Data Security with SiteLock Secure
-• Cloud Based Software as to avoid Data Loss
-• Auto Synchronization with Mobile App
-• Customisation Available on Dashboard, Fees & Marksheet Panel
-• Time Table & TC/CC Auto Generation
-• Promotion to Next Class with Pass, Fail & Awaiting Results
-• Session Wise Reports - can access the old session data also
-• One Click Report
-• 100% Cloud Based ERP.
-• No Set Up Cost.
-• No Installation Cost.
-• No Extra AMC.
-• No Extra VPS (Virtual Private Server) Cost.
-• Constant Evolution with No Extra Cost.
-• Free Training (Training Twice in 1st Year and once with every update).
-• Data Export to Excel and Print Feature is available with every Report on One Click.
-• Data Back Up Facility on One Click.
-• 99.5% Up - Time SLA.
-• Responsive Application – Accessible on all Browser, Smart Phones and Tablets
-• Transactional SMS (active on DND) with Sender ID in a year.`,
-    image: '/sagokoom.webp' 
+    description: 'SaaS based Application for the Schools inbuilt with SMS Services and Digital Marksheet. (Detailed content pending)',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800' 
   },
-  { _id: '2', name: 'FinTrack Analytics', slug: 'fintrack', category: 'Finance', description: 'Advanced financial tracking and predictive analytics dashboard.', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-  { _id: '3', name: 'HR Connect', slug: 'hr-connect', category: 'Human Resources', description: 'Streamline your human resources and recruitment processes globally.', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }
+  { 
+    _id: '2', 
+    name: 'Library Management Software', 
+    slug: 'library-management', 
+    category: 'Education ERP',
+    description: 'Digital Solutions which help the organisation to manage the work of Library on a single click. (Detailed content pending)',
+    image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800' 
+  },
+  { 
+    _id: '3', 
+    name: 'Attendance Management Software', 
+    slug: 'attendance-management', 
+    category: 'Enterprise Tools',
+    description: 'To Mark the Attendance Manually or with the Help of Barcode or Bio-Metric Devices. Inbuilt with Automatic SMS Notifications also for the Absentees. (Detailed content pending)',
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' 
+  },
+  { 
+    _id: '4', 
+    name: 'SMS Panel', 
+    slug: 'sms-panel', 
+    category: 'Communication',
+    description: 'To send Bulk SMSs on both DND or Non-DND Numbers. Can be used as Promotional or Informational. Available with Customise Panel. (Detailed content pending)',
+    image: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&q=80&w=800' 
+  }
 ];
 
 const Products = () => {

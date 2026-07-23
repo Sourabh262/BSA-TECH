@@ -6,19 +6,35 @@ import { Link } from 'react-router-dom';
 const products = [
   {
     id: 1,
-    name: 'SaĝoKomm - School SaaS',
+    name: 'School Management Software',
     category: 'Education ERP',
-    description: 'SaaS based Application for the Schools inbuilt with Automatic SMS Notifications, Digital Marksheet, Digital TC, Online Payment Fees and Mobile App.',
-    features: ['CBSE/ICSE Digital Marksheet', 'Automatic SMS', '100% Cloud Based', 'No Setup Cost'],
-    image: '/sagokoom.webp',
+    description: 'SaaS based Application for the Schools inbuilt with SMS Services and Digital Marksheet.',
+    features: ['SMS Services', 'Digital Marksheet', 'Cloud Based SaaS', 'School Administration'],
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800',
   },
   {
     id: 2,
-    name: 'Hospital Flow',
-    category: 'Healthcare',
-    description: 'Streamline hospital operations with patient records, appointment scheduling, and pharmacy management.',
-    features: ['EHR Integration', 'Doctor Scheduling', 'Billing & Insurance', 'Telemedicine Ready'],
-    image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80&w=800',
+    name: 'Library Management Software',
+    category: 'Education ERP',
+    description: 'Digital Solutions which help the organisation to manage the work of Library on a single click.',
+    features: ['Book Tracking', 'Member Management', 'One Click Issue/Return', 'Digital Catalog'],
+    image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: 3,
+    name: 'Attendance Management Software',
+    category: 'Enterprise Tools',
+    description: 'To Mark the Attendance Manually or with the Help of Barcode or Bio-Metric Devices. Inbuilt with Automatic SMS Notifications also for the Absentees.',
+    features: ['Biometric/Barcode Support', 'Automatic SMS for Absentees', 'Manual Override', 'Detailed Reports'],
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: 4,
+    name: 'SMS Panel',
+    category: 'Communication',
+    description: 'To send Bulk SMSs on both DND or Non-DND Numbers. Can be used as Promotional or Informational. Available with Customise Panel.',
+    features: ['Bulk SMS Delivery', 'DND/Non-DND Routing', 'Customisable Panel', 'Promotional Campaigns'],
+    image: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&q=80&w=800',
   }
 ];
 
