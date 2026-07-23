@@ -29,7 +29,8 @@ const Products = () => {
       try {
         const { data } = await api.get('/products');
         if (data && data.length > 0) {
-          setProducts(data);
+          // Combine backend products with fallback products
+          setProducts([...data, ...fallbackProducts] as any);
         } else {
           setProducts(fallbackProducts as any);
         }
