@@ -16,13 +16,6 @@ const Login = () => {
     setError('');
 
     try {
-      // Hardcoded bypass if the DB is still failing on the user's end
-      if (email === 'admin@bsa.tech' && password === 'admin') {
-         localStorage.setItem('adminToken', 'bypass-token-for-db-failure');
-         navigate('/admin');
-         return;
-      }
-
       const { data } = await api.post('/auth/login', { email, password });
       localStorage.setItem('adminToken', data.token);
       navigate('/admin');
@@ -103,7 +96,7 @@ const Login = () => {
           </form>
 
           <div className="mt-6 text-center text-sm text-slate-500">
-            <p>Demo Login: <br/> Email: <b>admin@bsa.tech</b> <br/> Pass: <b>admin</b></p>
+            <p>Admin Login: <br/> Email: <b>admin@bsatech.in</b> <br/> Pass: <b>admin123</b> (Default)</p>
           </div>
         </div>
       </div>
