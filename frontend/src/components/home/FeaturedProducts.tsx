@@ -86,7 +86,7 @@ const FeaturedProducts = () => {
                   ))}
                 </ul>
                 <div className="mt-auto">
-                  <Link to={`/products/${product.id}`} className="text-primary-600 font-semibold hover:text-primary-700 text-sm flex items-center group-hover:underline">
+                  <Link to="/products" className="text-primary-600 font-semibold hover:text-primary-700 text-sm flex items-center group-hover:underline">
                     View Details <ArrowRight size={16} className="ml-1" />
                   </Link>
                 </div>
