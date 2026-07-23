@@ -15,7 +15,7 @@ const teamMembers = [
   },
   {
     location: 'LUCKNOW',
-    name: 'Er. Ankur Agrahari',
+    name: 'Er. Ajay Clarin',
     address: '306-B, 3rd Floor Prince Complex Behind Sahu Cinema, Hazratganj, Lucknow, UP-226301',
     email: 'ajay.clarin@bsatech.in',
     phone: '9936251117',
@@ -23,7 +23,7 @@ const teamMembers = [
   },
   {
     location: 'HALDWANI',
-    name: 'Er. Ajay Clarin',
+    name: 'Er. Ankur Agrahari',
     address: 'H-12, U-1 Durga City Centre, Haldwani, Nainital-Uttarakhand',
     email: 'ankur@bsatech.in',
     phone: '9406744677',
@@ -37,14 +37,14 @@ const Team = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight"
           >
             Our Team & Offices
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -66,9 +66,9 @@ const Team = () => {
             >
               <div className="relative h-48 overflow-hidden">
                 <div className="absolute inset-0 bg-primary-900/40 group-hover:bg-primary-900/10 transition-colors z-10"></div>
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
+                <img
+                  src={member.image}
+                  alt={member.name}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute bottom-4 left-4 z-20">
@@ -77,23 +77,23 @@ const Team = () => {
                   </span>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-slate-800 mb-4">{member.name}</h3>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <MapPin className="text-primary-600 mt-1 shrink-0" size={20} />
                     <p className="text-slate-600 text-sm leading-relaxed">{member.address}</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-3">
                     <Mail className="text-primary-600 shrink-0" size={20} />
                     <a href={`mailto:${member.email}`} className="text-slate-600 text-sm hover:text-primary-600 transition-colors">
                       {member.email}
                     </a>
                   </div>
-                  
+
                   <div className="flex items-center gap-3">
                     <Phone className="text-primary-600 shrink-0" size={20} />
                     <a href={`tel:${member.phone}`} className="text-slate-600 text-sm hover:text-primary-600 transition-colors font-medium">
