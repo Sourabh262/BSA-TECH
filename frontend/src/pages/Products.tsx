@@ -19,8 +19,38 @@ const fallbackProducts = [
     name: 'School Management Software', 
     slug: 'school-management', 
     category: 'Education ERP',
-    description: 'SaaS based Application for the Schools inbuilt with SMS Services and Digital Marksheet. (Detailed content pending)',
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800' 
+    description: `SaĝoKomm - 'Saĝo' Means 'Wisdom - Knowledge' and 'Komm' Means 'Communications' refers as 'A 360 degree Communication of the Knowledge and Information between the Students, Parents, Teachers, Principal and Schools'.
+
+SaĝoKomm offers a unique blend to drastically reduce the Total Cost of Ownership while providing the impetus for business growth, results based computing and managed information delivery. SaĝoKomm provides a 360 degree view with all the features and functionalities of the school preferences. SaĝoKomm is the complete School/College Management Integrated Software that caters across all the features and functionalities of schools and college which they require to operate.
+
+One Click Result Oriented Based Reports. Digital Marksheet based on CBSE, ICSE and State Board with Automatic Calculations. Automatic Notifications through SMS and Secure Online Data.
+
+Functionalities & Features:
+• 24*7*365 Automatic SMS Notifications
+• CBSE, ICSE Based Digital Marksheet
+• Scholastic n Co-Scholastic Auto Calculations
+• Marksheet Printing Features
+• Data Security with SiteLock Secure
+• Cloud Based Software as to avoid Data Loss
+• Auto Synchronization with Mobile App
+• Customisation Available on Dashboard, Fees & Marksheet Panel
+• Time Table & TC/CC Auto Generation
+• Promotion to Next Class with Pass, Fail & Awaiting Results
+• Session Wise Reports - can access the old session data also
+• One Click Report
+• 100% Cloud Based ERP.
+• No Set Up Cost.
+• No Installation Cost.
+• No Extra AMC.
+• No Extra VPS (Virtual Private Server) Cost.
+• Constant Evolution with No Extra Cost.
+• Free Training (Training Twice in 1st Year and once with every update).
+• Data Export to Excel and Print Feature is available with every Report on One Click.
+• Data Back Up Facility on One Click.
+• 99.5% Up - Time SLA.
+• Responsive Application – Accessible on all Browser, Smart Phones and Tablets
+• Transactional SMS (active on DND) with Sender ID in a year.`,
+    image: '/sagokoom.webp' 
   },
   { 
     _id: '2', 
@@ -152,7 +182,7 @@ const Products = () => {
                 {selectedProduct.description}
               </p>
 
-              {selectedProduct.slug === 'sagokomm' && (
+              {selectedProduct.slug === 'school-management' && (
                 <div className="mt-8 mb-6">
                   <h3 className="text-xl font-bold text-slate-800 mb-4">Modules, Plans & Pricing</h3>
                   <img src="/plans-and-pricing.webp" alt="SaĝoKomm Plans & Pricing" className="w-full rounded-xl shadow-md border border-slate-200 mb-8" />
