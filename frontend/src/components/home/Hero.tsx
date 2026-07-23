@@ -23,18 +23,18 @@ const Hero = () => {
                 🚀 Transforming Ideas Into Digital Reality
               </span>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight mb-6">
-                Build The Future With <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600">BSA TECH</span>
+                Build The Future With <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-900">BSA TECH</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
                 We craft premium, high-performance web and mobile applications that drive business growth and user engagement.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-primary-500/30">
+                <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-primary-600/30">
                   Start Your Project
                   <ArrowRight size={20} />
                 </Link>
-                <Link to="/portfolio" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:-translate-y-1 shadow-sm hover:shadow">
+                <Link to="/portfolio" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-200 hover:border-primary-600 px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:-translate-y-1 shadow-sm hover:shadow">
                   View Our Work
                 </Link>
               </div>

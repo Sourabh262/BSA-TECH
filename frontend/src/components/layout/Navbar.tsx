@@ -39,7 +39,7 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/contact" className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-md">
+            <Link to="/contact" className="hidden md:flex items-center justify-center px-6 py-2.5 rounded-full bg-primary-600 text-white font-medium hover:bg-primary-700 transition-colors shadow-md hover:shadow-lg">
               Get Started
             </Link>
           </div>
