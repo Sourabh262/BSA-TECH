@@ -6,15 +6,15 @@ const Privacy = () => {
   return (
     <div className="pt-8 pb-20">
       {/* Header Section */}
-      <div className="bg-primary-900 text-white py-16 mb-12">
+      <div className="bg-slate-900 text-white py-16 mb-12">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex justify-center mb-6"
           >
-            <div className="bg-primary-800/50 p-4 rounded-full">
-              <Shield size={48} className="text-primary-300" />
+            <div className="bg-slate-800/80 p-4 rounded-full">
+              <Shield size={48} className="text-blue-400" />
             </div>
           </motion.div>
           <motion.h1
@@ -29,7 +29,7 @@ const Privacy = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-primary-100 leading-relaxed max-w-2xl mx-auto"
+            className="text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto"
           >
             Sagokomm is owned by bsatech.in which is a School ERP portal endeavoring constantly to provide with services to the schools. We are strongly committed to individual's right to privacy, hence we have drawn out a privacy statement with regard to the information we collect from individuals.
           </motion.p>
@@ -44,7 +44,7 @@ const Privacy = () => {
             {/* Section 1 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-700 text-sm">1</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 text-sm">1</span>
                 Personal information from members
               </h2>
               <p className="text-slate-600 leading-relaxed ml-11">
@@ -55,7 +55,7 @@ const Privacy = () => {
             {/* Section 2 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-700 text-sm">2</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 text-sm">2</span>
                 Credit/Debit card information from members
               </h2>
               <p className="text-slate-600 leading-relaxed ml-11">
@@ -66,7 +66,7 @@ const Privacy = () => {
             {/* Section 3 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-700 text-sm">3</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 text-sm">3</span>
                 Information collected from Web Portal
               </h2>
               <p className="text-slate-600 leading-relaxed ml-11">
@@ -77,7 +77,7 @@ const Privacy = () => {
             {/* Section 4 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-700 text-sm">4</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 text-sm">4</span>
                 Utilization of the information
               </h2>
               <p className="text-slate-600 leading-relaxed ml-11">
@@ -88,7 +88,7 @@ const Privacy = () => {
             {/* Section 5 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-700 text-sm">5</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 text-sm">5</span>
                 Information Sharing and Security
               </h2>
               <div className="text-slate-600 leading-relaxed ml-11 space-y-4">
@@ -103,7 +103,7 @@ const Privacy = () => {
             {/* Section 6 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-700 text-sm">6</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 text-sm">6</span>
                 Payment from Visitors
               </h2>
               <p className="text-slate-600 leading-relaxed ml-11">
@@ -114,7 +114,7 @@ const Privacy = () => {
             {/* Section 7 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-700 text-sm">7</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 text-sm">7</span>
                 Alteration, accessing and updating the personal information
               </h2>
               <p className="text-slate-600 leading-relaxed ml-11">
@@ -125,7 +125,7 @@ const Privacy = () => {
             {/* Section 8 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-700 text-sm">8</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 text-sm">8</span>
                 Grievance & Complaints
               </h2>
               <p className="text-slate-600 leading-relaxed ml-11">
@@ -136,7 +136,7 @@ const Privacy = () => {
             {/* Section 9 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-700 text-sm">9</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 text-sm">9</span>
                 Email and SMS Policy
               </h2>
               <p className="text-slate-600 leading-relaxed ml-11">
