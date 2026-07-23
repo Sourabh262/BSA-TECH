@@ -7,7 +7,7 @@ const AdminLayout = () => {
   const location = useLocation();
 
   const handleLogout = () => {
-    // We'll implement actual logout logic here later (clear tokens, etc.)
+    localStorage.removeItem('adminToken');
     navigate('/admin/login');
   };
 
