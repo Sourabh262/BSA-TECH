@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 mb-6 inline-flex">
-              <img src="/swank-logo.webp" alt="BSA TECH" className="h-12 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
+              <img src="/swank-logo.webp" alt="BSA TECH" className="h-16 sm:h-20 md:h-24 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
               Empowering businesses with innovative software solutions, cutting-edge web development, and digital transformation strategies.

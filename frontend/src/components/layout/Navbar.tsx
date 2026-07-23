@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/swank-logo.webp" alt="BSA TECH" className="h-12 w-auto transition-transform group-hover:scale-105" />
+            <img src="/swank-logo.webp" alt="BSA TECH" className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-transform group-hover:scale-105" />
           </Link>
 
           {/* Desktop Nav */}
