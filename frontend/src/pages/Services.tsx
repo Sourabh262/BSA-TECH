@@ -23,10 +23,10 @@ const iconMap: Record<string, any> = {
 };
 
 const fallbackServices = [
-  { _id: '1', title: 'Custom Software Development', slug: 'custom-software', shortDescription: 'Tailored software solutions designed to meet your specific business requirements and accelerate growth.', icon: <Code size={32} />, image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-  { _id: '2', title: 'Mobile App Development', slug: 'mobile-app', shortDescription: 'Native and cross-platform mobile applications that deliver exceptional user experiences.', icon: <Smartphone size={32} />, image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-  { _id: '3', title: 'Cloud Architecture', slug: 'cloud-architecture', shortDescription: 'Scalable and secure cloud infrastructure setup, migration, and management.', icon: <Cloud size={32} />, image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-  { _id: '4', title: 'Cybersecurity Solutions', slug: 'cybersecurity', shortDescription: 'Comprehensive security audits and implementation to protect your digital assets.', icon: <Shield size={32} />, image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }
+  { _id: '1', title: 'Web Design', slug: 'web-design', shortDescription: 'We have a creative Team who creates beautiful Website for Clients.', icon: <Code size={32} />, image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+  { _id: '2', title: 'Software Development', slug: 'software-development', shortDescription: 'We provides SaaS Based Applications and Software to the Organisations.', icon: <Server size={32} />, image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+  { _id: '3', title: 'ERP Solutions', slug: 'erp-solutions', shortDescription: 'We Customise Softwares and build the ERP Solutions as per the Customer Needs.', icon: <Database size={32} />, image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+  { _id: '4', title: 'E-Commerce', slug: 'e-commerce', shortDescription: 'We build Shopping Sites for the Mid Segment Businesses who want to sell online.', icon: <Smartphone size={32} />, image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }
 ];
 
 const Services = () => {

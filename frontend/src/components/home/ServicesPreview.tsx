@@ -6,31 +6,31 @@ import { Link } from 'react-router-dom';
 const services = [
   {
     id: 1,
-    title: 'Web Application Development',
-    description: 'Custom, scalable, and responsive web applications built with modern frameworks like React and Node.js.',
+    title: 'Web Design',
+    description: 'We have a creative Team who creates beautiful Website for Clients.',
     icon: <Code size={32} />,
     color: 'bg-blue-50 text-blue-600',
   },
   {
     id: 2,
-    title: 'Mobile App Development',
-    description: 'Native and cross-platform mobile apps for iOS and Android that deliver exceptional user experiences.',
-    icon: <Smartphone size={32} />,
+    title: 'Software Development',
+    description: 'We provides SaaS Based Applications and Software to the Organisations.',
+    icon: <Server size={32} />,
     color: 'bg-primary-50 text-primary-600',
   },
   {
     id: 3,
-    title: 'ERP & CRM Solutions',
-    description: 'Enterprise resource planning and customer relationship management systems tailored to your business workflow.',
+    title: 'ERP Solutions',
+    description: 'We Customise Softwares and build the ERP Solutions as per the Customer Needs.',
     icon: <Database size={32} />,
     color: 'bg-purple-50 text-purple-600',
   },
   {
     id: 4,
-    title: 'Cloud Architecture',
-    description: 'Secure, scalable, and highly available cloud infrastructure deployment and management.',
-    icon: <Cloud size={32} />,
-    color: 'bg-cyan-50 text-cyan-600',
+    title: 'E-Commerce',
+    description: 'We build Shopping Sites for the Mid Segment Businesses who want to sell online.',
+    icon: <Smartphone size={32} />,
+    color: 'bg-emerald-50 text-emerald-600',
   },
 ];
 
