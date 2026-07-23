@@ -51,14 +51,13 @@ const Footer = () => {
 
         </div>
         
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} BSA TECH. All rights reserved.
+        <div className="border-t border-slate-800 pt-8 flex flex-col justify-center items-center gap-4 text-center">
+          <p className="text-sm text-slate-400 font-medium">
+            &copy; 2020 | BSA TECH | Designed by BSA TEAM
           </p>
-          <div className="flex gap-6 text-sm">
-            <Link to="/privacy" className="hover:text-primary-500 transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-primary-500 transition-colors">Terms of Service</Link>
-          </div>
+          <p className="text-xs text-slate-500 max-w-4xl leading-relaxed">
+            Use of this Site is subject to express <Link to="/terms" className="text-primary-500 hover:underline">Terms of Use</Link>. By using this Site, you signify that you agree to be bound by these Terms of Use, which were last revised on January 10, 2018. <Link to="/privacy" className="text-primary-500 hover:underline">Legal & Privacy Policy</Link> | <Link to="/legal" className="text-primary-500 hover:underline">Legal Agreements</Link>
+          </p>
         </div>
       </div>
     </footer>
