@@ -14,9 +14,49 @@ interface Product {
 }
 
 const fallbackProducts = [
-  { _id: '1', name: 'ERP Pro Suite', slug: 'erp-pro', description: 'Complete enterprise resource planning solution for modern businesses.', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-  { _id: '2', name: 'FinTrack Analytics', slug: 'fintrack', description: 'Advanced financial tracking and predictive analytics dashboard.', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-  { _id: '3', name: 'HR Connect', slug: 'hr-connect', description: 'Streamline your human resources and recruitment processes globally.', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }
+  { 
+    _id: '1', 
+    name: 'SaĝoKomm - A School Software on SaaS', 
+    slug: 'sagokomm', 
+    category: 'Education ERP',
+    description: `SaĝoKomm - 'Saĝo' Means 'Wisdom - Knowledge' and 'Komm' Means 'Communications' refers as 'A 360 degree Communication of the Knowledge and Information between the Students, Parents, Teachers, Principal and Schools'.
+
+SaĝoKomm offers a unique blend to drastically reduce the Total Cost of Ownership while providing the impetus for business growth, results based computing and managed information delivery. SaĝoKomm provides a 360 degree view with all the features and functionalities of the school preferences. SaĝoKomm is the complete School/College Management Integrated Software that caters across all the features and functionalities of schools and college which they require to operate.
+
+One Click Result Oriented Based Reports. Digital Marksheet based on CBSE, ICSE and State Board with Automatic Calculations. Automatic Notifications through SMS and Secure Online Data.
+
+Functionalities & Features:
+• 24*7*365 Automatic SMS Notifications
+• CBSE, ICSE Based Digital Marksheet
+• Scholastic n Co-Scholastic Auto Calculations
+• Marksheet Printing Features
+• Data Security with SiteLock Secure
+• Cloud Based Software as to avoid Data Loss
+• Auto Synchronization with Mobile App
+• Customisation Available on Dashboard, Fees & Marksheet Panel
+• Time Table & TC/CC Auto Generation
+• Promotion to Next Class with Pass, Fail & Awaiting Results
+• Session Wise Reports - can access the old session data also
+• One Click Report
+• 100% Cloud Based ERP.
+• No Set Up Cost.
+• No Installation Cost.
+• No Extra AMC.
+• No Extra VPS (Virtual Private Server) Cost.
+• Constant Evolution with No Extra Cost.
+• Free Training (Training Twice in 1st Year and once with every update).
+• Data Export to Excel and Print Feature is available with every Report on One Click.
+• Data Back Up Facility on One Click.
+• 99.5% Up - Time SLA.
+• Responsive Application – Accessible on all Browser, Smart Phones and Tablets
+• Transactional SMS (active on DND) with Sender ID in a year.
+
+Interested In SaĝoKomm Service ! Great.. Let Us help You....
+Get In Touch ! or Call us at 8840854007`,
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800' 
+  },
+  { _id: '2', name: 'FinTrack Analytics', slug: 'fintrack', category: 'Finance', description: 'Advanced financial tracking and predictive analytics dashboard.', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+  { _id: '3', name: 'HR Connect', slug: 'hr-connect', category: 'Human Resources', description: 'Streamline your human resources and recruitment processes globally.', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }
 ];
 
 const Products = () => {
