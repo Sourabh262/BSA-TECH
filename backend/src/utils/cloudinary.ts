@@ -2,11 +2,21 @@ import { v2 as cloudinary } from 'cloudinary';
 import { CloudinaryStorage } from 'multer-storage-cloudinary';
 import multer from 'multer';
 
+// Helper to find env var even if it has trailing spaces from copy-paste
+const getEnv = (keyMatch: string) => {
+  for (const key in process.env) {
+    if (key.trim() === keyMatch) {
+      return process.env[key]?.trim();
+    }
+  }
+  return undefined;
+};
+
 // Configure Cloudinary
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME || 'demo',
-  api_key: process.env.CLOUDINARY_API_KEY || 'api_key',
-  api_secret: process.env.CLOUDINARY_API_SECRET || 'api_secret'
+  cloud_name: getEnv('CLOUDINARY_CLOUD_NAME') || 'demo',
+  api_key: getEnv('CLOUDINARY_API_KEY') || 'api_key',
+  api_secret: getEnv('CLOUDINARY_API_SECRET') || 'api_secret'
 });
 
 // Configure Storage
