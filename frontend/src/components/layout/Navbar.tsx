@@ -28,9 +28,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 text-primary-600">
-            <Code2 size={32} />
-            <span className="text-2xl font-bold text-slate-800 tracking-tight">BSA TECH</span>
+          <Link to="/" className="flex items-center gap-2 group">
+            <img src="/swank-logo.webp" alt="BSA TECH" className="h-12 w-auto transition-transform group-hover:scale-105" />
           </Link>
 
           {/* Desktop Nav */}

@@ -9,9 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2 text-primary-500">
-              <Code2 size={32} />
-              <span className="text-2xl font-bold text-white tracking-tight">BSA TECH</span>
+            <Link to="/" className="flex items-center gap-2 mb-6 inline-flex">
+              <img src="/swank-logo.webp" alt="BSA TECH" className="h-12 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
               Empowering businesses with innovative software solutions, cutting-edge web development, and digital transformation strategies.
