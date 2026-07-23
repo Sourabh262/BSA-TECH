@@ -35,11 +35,11 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.name} to={link.path} className="text-slate-600 hover:text-primary-600 font-medium transition-colors">
+              <Link key={link.name} to={link.path} className="text-slate-600 hover:text-blue-600 font-medium transition-colors">
                 {link.name}
               </Link>
             ))}
-            <Link to="/contact" className="hidden md:flex items-center justify-center px-6 py-2.5 rounded-full bg-primary-600 text-white font-medium hover:bg-primary-700 transition-colors shadow-md hover:shadow-lg">
+            <Link to="/contact" className="hidden md:flex items-center justify-center px-6 py-2.5 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">
               Get Started
             </Link>
           </div>
@@ -64,7 +64,7 @@ const Navbar = () => {
               <Link 
                 key={link.name} 
                 to={link.path} 
-                className="px-6 py-3 text-slate-700 hover:bg-slate-50 hover:text-primary-600 font-medium border-b border-slate-100 last:border-0"
+                className="px-6 py-3 text-slate-700 hover:bg-slate-50 hover:text-blue-600 font-medium border-b border-slate-100 last:border-0"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
