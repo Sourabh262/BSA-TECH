@@ -7,8 +7,12 @@ import Dashboard from './pages/admin/Dashboard';
 import Login from './pages/admin/Login';
 import ManageServices from './pages/admin/ManageServices';
 import ManageProducts from './pages/admin/ManageProducts';
+import ManagePortfolio from './pages/admin/ManagePortfolio';
+import ManageInquiries from './pages/admin/ManageInquiries';
 import Services from './pages/Services';
 import Products from './pages/Products';
+import Portfolio from './pages/Portfolio';
+import Contact from './pages/Contact';
 
 const NotFound = () => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
@@ -37,6 +41,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="services" element={<Services />} />
           <Route path="products" element={<Products />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>
         
@@ -51,6 +57,8 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="services" element={<ManageServices />} />
           <Route path="products" element={<ManageProducts />} />
+          <Route path="portfolio" element={<ManagePortfolio />} />
+          <Route path="inquiries" element={<ManageInquiries />} />
         </Route>
       </Routes>
     </Router>

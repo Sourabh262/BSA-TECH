@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Layers, Box, Briefcase, FileText, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, Layers, Box, Briefcase, FileText, Settings, LogOut, Mail } from 'lucide-react';
 
 const AdminLayout = () => {
   const navigate = useNavigate();
@@ -16,6 +16,7 @@ const AdminLayout = () => {
     { name: 'Services', path: '/admin/services', icon: <Layers size={20} /> },
     { name: 'Products', path: '/admin/products', icon: <Box size={20} /> },
     { name: 'Portfolio', path: '/admin/portfolio', icon: <Briefcase size={20} /> },
+    { name: 'Inquiries', path: '/admin/inquiries', icon: <Mail size={20} /> },
     { name: 'Blogs', path: '/admin/blogs', icon: <FileText size={20} /> },
     { name: 'Settings', path: '/admin/settings', icon: <Settings size={20} /> },
   ];

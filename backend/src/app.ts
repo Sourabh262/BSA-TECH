@@ -6,6 +6,7 @@ import productRoutes from './routes/productRoutes';
 import authRoutes from './routes/authRoutes';
 import uploadRoutes from './routes/uploadRoutes';
 import portfolioRoutes from './routes/portfolioRoutes';
+import inquiryRoutes from './routes/inquiryRoutes';
 
 const app: Application = express();
 
@@ -22,6 +23,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/services', serviceRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/portfolio', portfolioRoutes);
+app.use('/api/inquiries', inquiryRoutes);
 app.use('/api/upload', uploadRoutes);
 
 // Error handling middleware can go here
