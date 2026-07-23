@@ -69,3 +69,24 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
+
+// @desc    Change user password
+// @route   PUT /api/auth/change-password
+// @access  Public (should be protected in future)
+export const changePassword = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const { email, currentPassword, newPassword } = req.body;
+
+        const user = await User.findOne({ email });
+
+        if (user && (await user.matchPassword(currentPassword))) {
+            user.password = newPassword;
+            await user.save();
+            res.json({ message: 'Password updated successfully' });
+        } else {
+            res.status(401).json({ message: 'Invalid email or current password' });
+        }
+    } catch (error: any) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
