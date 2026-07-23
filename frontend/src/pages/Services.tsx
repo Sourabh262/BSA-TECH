@@ -32,6 +32,7 @@ const fallbackServices = [
 const Services = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -86,9 +87,9 @@ const Services = () => {
                     <p className="text-slate-600 mb-6 line-clamp-3 flex-1">
                       {service.shortDescription}
                     </p>
-                    <a href={`/services/${service.slug}`} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 mt-auto">
+                    <button onClick={() => setSelectedService(service)} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 mt-auto text-left">
                       Learn more <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                    </button>
                   </div>
                 </motion.div>
               );
@@ -96,6 +97,39 @@ const Services = () => {
           </div>
         )}
       </div>
+
+      {/* Service Details Modal */}
+      {selectedService && (
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden max-h-[90vh] flex flex-col">
+            {(selectedService as any).image && (
+              <div className="h-56 w-full relative">
+                <img src={(selectedService as any).image} alt={selectedService.title} className="w-full h-full object-cover" />
+                <button onClick={() => setSelectedService(null)} className="absolute top-4 right-4 bg-black/50 text-white rounded-full p-2 hover:bg-black/70">✕</button>
+              </div>
+            )}
+            <div className="p-8 overflow-y-auto">
+              {!((selectedService as any).image) && (
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="text-3xl font-bold text-slate-800">{selectedService.title}</h2>
+                  <button onClick={() => setSelectedService(null)} className="text-slate-500 hover:text-slate-800 text-xl">✕</button>
+                </div>
+              )}
+              {((selectedService as any).image) && <h2 className="text-3xl font-bold text-slate-800 mb-6">{selectedService.title}</h2>}
+              
+              <h3 className="text-xl font-bold text-slate-800 mb-3">Service Details</h3>
+              <p className="text-slate-600 text-lg leading-relaxed whitespace-pre-wrap mb-8">
+                {(selectedService as any).fullDescription || selectedService.shortDescription}
+              </p>
+              
+              <div className="flex justify-end gap-4 border-t border-slate-200 pt-6 mt-6">
+                <button onClick={() => setSelectedService(null)} className="px-6 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200">Close</button>
+                <Link to="/contact" className="px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700">Get Started</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

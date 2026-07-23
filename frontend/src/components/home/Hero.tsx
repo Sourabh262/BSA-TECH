@@ -43,31 +43,35 @@ const Hero = () => {
 
           {/* Visual Showcase (Cards) */}
           <div className="relative h-[500px] hidden lg:block">
-            <motion.div 
-              initial={{ opacity: 0, x: 50, rotate: -5 }}
-              animate={{ opacity: 1, x: 0, rotate: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="absolute top-10 right-10 glass p-6 rounded-2xl w-72 shadow-2xl z-20 border border-white/40"
-            >
-              <div className="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4">
-                <Code size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Web Development</h3>
-              <p className="text-slate-600 text-sm">Scalable React & Node.js applications built for performance.</p>
-            </motion.div>
+            <Link to="/services">
+              <motion.div 
+                initial={{ opacity: 0, x: 50, rotate: -5 }}
+                animate={{ opacity: 1, x: 0, rotate: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="absolute top-10 right-10 glass p-6 rounded-2xl w-72 shadow-2xl z-20 border border-white/40 cursor-pointer hover:scale-105 transition-transform"
+              >
+                <div className="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                  <Code size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">Web Development</h3>
+                <p className="text-slate-600 text-sm">Scalable React & Node.js applications built for performance.</p>
+              </motion.div>
+            </Link>
 
-            <motion.div 
-              initial={{ opacity: 0, x: -50, y: 50 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="absolute bottom-20 left-10 glass p-6 rounded-2xl w-72 shadow-xl z-30 border border-white/40"
-            >
-              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center text-blue-600 mb-4">
-                <Smartphone size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Mobile Apps</h3>
-              <p className="text-slate-600 text-sm">Native and cross-platform mobile experiences.</p>
-            </motion.div>
+            <Link to="/services">
+              <motion.div 
+                initial={{ opacity: 0, x: -50, y: 50 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+                className="absolute bottom-20 left-10 glass p-6 rounded-2xl w-72 shadow-xl z-30 border border-white/40 cursor-pointer hover:scale-105 transition-transform"
+              >
+                <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+                  <Smartphone size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">Mobile Apps</h3>
+                <p className="text-slate-600 text-sm">Native and cross-platform mobile experiences.</p>
+              </motion.div>
+            </Link>
 
             <motion.div 
               initial={{ opacity: 0, y: -50 }}
