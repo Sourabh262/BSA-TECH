@@ -41,3 +41,36 @@ export const createService = async (req: Request, res: Response) => {
         res.status(400).json({ message: 'Invalid data', error: error.message });
     }
 };
+
+// @desc    Update a service
+// @route   PUT /api/services/:id
+// @access  Private/Admin
+export const updateService = async (req: Request, res: Response) => {
+    try {
+        const service = await Service.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+        if (service) {
+            res.json(service);
+        } else {
+            res.status(404).json({ message: 'Service not found' });
+        }
+    } catch (error: any) {
+        res.status(400).json({ message: 'Invalid data', error: error.message });
+    }
+};
+
+// @desc    Delete a service
+// @route   DELETE /api/services/:id
+// @access  Private/Admin
+export const deleteService = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const service = await Service.findById(req.params.id);
+        if (service) {
+            await service.deleteOne();
+            res.json({ message: 'Service removed' });
+        } else {
+            res.status(404).json({ message: 'Service not found' });
+        }
+    } catch (error: any) {
+        res.status(500).json({ message: 'Server Error', error: error.message });
+    }
+};

@@ -10,6 +10,7 @@ interface Product {
   slug: string;
   description: string;
   category?: string;
+  image?: string;
 }
 
 const fallbackProducts = [
@@ -66,7 +67,11 @@ const Products = () => {
                 className="group rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all"
               >
                 <div className="h-64 bg-slate-100 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-blue-500/20 group-hover:scale-105 transition-transform duration-500"></div>
+                  {(product as any).image ? (
+                    <img src={(product as any).image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-blue-500/20 group-hover:scale-105 transition-transform duration-500"></div>
+                  )}
                   <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold text-slate-700">
                     {product.category || 'Software'}
                   </div>

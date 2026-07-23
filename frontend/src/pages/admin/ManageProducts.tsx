@@ -59,21 +59,56 @@ const ManageProducts = () => {
     }
   };
 
+  const [editingId, setEditingId] = useState<string | null>(null);
+
   useEffect(() => {
     fetchProducts();
   }, []);
 
+  const openCreateModal = () => {
+    setEditingId(null);
+    setFormData({ name: '', slug: '', description: '', category: 'SaaS', features: ['Feature 1'], image: '' });
+    setIsModalOpen(true);
+  };
+
+  const openEditModal = (product: any) => {
+    setEditingId(product._id);
+    setFormData({
+      name: product.name,
+      slug: product.slug,
+      description: product.description || '',
+      category: product.category || 'SaaS',
+      features: product.features || ['Feature 1'],
+      image: product.image || '',
+    });
+    setIsModalOpen(true);
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!window.confirm('Are you sure you want to delete this product?')) return;
+    try {
+      await api.delete(`/products/${id}`);
+      fetchProducts();
+    } catch (error: any) {
+      console.error('Failed to delete product', error);
+      alert('Failed to delete product');
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await api.post('/products', formData);
+      if (editingId) {
+        await api.put(`/products/${editingId}`, formData);
+      } else {
+        await api.post('/products', formData);
+      }
       setIsModalOpen(false);
       fetchProducts();
-      setFormData({ ...formData, name: '', slug: '', description: '' });
     } catch (error: any) {
-      console.error('Failed to create product', error);
+      console.error('Failed to save product', error);
       const errorMsg = error.response?.data?.message || error.response?.data?.error || error.message;
-      alert(`Error creating product: ${errorMsg}`);
+      alert(`Error saving product: ${errorMsg}`);
     }
   };
 
@@ -82,7 +117,7 @@ const ManageProducts = () => {
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-2xl font-bold text-slate-800">Manage Products</h2>
         <button 
-          onClick={() => setIsModalOpen(true)}
+          onClick={openCreateModal}
           className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
         >
           <Plus size={20} /> Add New Product
@@ -120,10 +155,13 @@ const ManageProducts = () => {
                       </span>
                     </td>
                     <td className="px-6 py-4 flex justify-end gap-3">
-                      <button className="text-blue-500 hover:bg-blue-50 p-2 rounded-md transition-colors">
+                      <button onClick={() => openEditModal(product)} className="text-blue-500 hover:bg-blue-50 p-2 rounded-md transition-colors">
                         <Edit2 size={18} />
                       </button>
-                      <button className="text-red-500 hover:bg-red-50 p-2 rounded-md transition-colors">
+                      <button 
+                        onClick={() => handleDelete(product._id)}
+                        className="text-red-500 hover:bg-red-50 p-2 rounded-md transition-colors"
+                      >
                         <Trash2 size={18} />
                       </button>
                     </td>
@@ -138,7 +176,7 @@ const ManageProducts = () => {
       {isModalOpen && (
         <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center z-50">
           <div className="bg-white rounded-xl shadow-2xl w-full max-w-lg p-6">
-            <h3 className="text-xl font-bold text-slate-800 mb-6">Create New Product</h3>
+            <h3 className="text-xl font-bold text-slate-800 mb-6">{editingId ? 'Edit Product' : 'Create New Product'}</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Product Name</label>

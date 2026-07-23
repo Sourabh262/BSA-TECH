@@ -71,18 +71,25 @@ const Services = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-all group"
+                  className="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-all group overflow-hidden flex flex-col"
                 >
-                  <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-                    <Icon size={28} />
+                  {(service as any).image && (
+                    <div className="h-48 w-full overflow-hidden">
+                      <img src={(service as any).image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  )}
+                  <div className="p-8 flex flex-col flex-1">
+                    <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors shrink-0">
+                      <Icon size={28} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-800 mb-3">{service.title}</h3>
+                    <p className="text-slate-600 mb-6 line-clamp-3 flex-1">
+                      {service.shortDescription}
+                    </p>
+                    <a href={`/services/${service.slug}`} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 mt-auto">
+                      Learn more <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    </a>
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-800 mb-3">{service.title}</h3>
-                  <p className="text-slate-600 mb-6 line-clamp-3">
-                    {service.shortDescription}
-                  </p>
-                  <a href={`/services/${service.slug}`} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    Learn more <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                  </a>
                 </motion.div>
               );
             })}
