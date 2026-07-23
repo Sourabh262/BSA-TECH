@@ -16,6 +16,7 @@ import Portfolio from './pages/Portfolio';
 import About from './pages/About';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
 
 const NotFound = () => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
@@ -48,6 +49,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="team" element={<Team />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Route>
         
