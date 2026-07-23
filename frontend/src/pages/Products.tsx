@@ -99,8 +99,41 @@ Bio Metric Machine: Get Bio Metric Machine Free with School Software. Condition 
     name: 'Attendance Management Software', 
     slug: 'attendance-management', 
     category: 'Enterprise Tools',
-    description: 'To Mark the Attendance Manually or with the Help of Barcode or Bio-Metric Devices. Inbuilt with Automatic SMS Notifications also for the Absentees. (Detailed content pending)',
-    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' 
+    description: `BSA Team Attendance Management Software Gives You An Easy Platform To Automate your Employees and Labours In and Out Management of your Premises with Barcode Reading. With this Software, you can easily maintain the report of every employee/labors and can the Live Stats - who are In and who are Out also. With every Unique Barcode Code to every Employee or Labour, this gives a Unique Blend Which Reduces The Work Of Customers And Fasten The Work And The Growth Of The Business.
+
+One Click Result Oriented Based Reports. Instant Live Reports of In and Out of All the Day.
+
+Major Functionalities:
+• Live Stats of In and Out at every Gate
+• Generates Barcode of Every Employee/Labor
+• Can Print any number of I-Cards
+• Attendace Mark only by the Barcode
+• Data Security with SiteLock Secure
+• Cloud Based Software as to avoid Data Loss
+• Customisation Available on Dashboard, etc.
+• Digital Reports - can access the old session data also
+• One Click Report
+
+Modules:
+❖ Add Employee with Details with Contractor or without Contractor ❖ Generate the Barcode ❖ Mark Attendance with the help of Barcode ❖ See the Live Stats who are In and Out ❖ Employee/Labor Wise Reports ❖ Contractor Wise Reports ❖ Date Wise Reports
+
+Features:
+• 100% Cloud Based ERP.
+• Available Both Offline & Online Version.
+• No Setup & Installation Cost For Online.
+• Free Training (Training Twice in 1st Year and once with every update).
+• Data Export to Excel and Print Feature is available with every Report on One Click.
+• Data Back Up Facility on One Click.
+• 99.5% Up - Time SLA.
+• Responsive Application – Accessible on all Browser, Smart Phones and Tablets
+• For Online, Server Charges will be chargeable extra.
+• Hardware Charges Extra.
+• Pricing varies as per the Software Requirement.
+
+Recent Offers !
+Website at Rs.18999/- only with School Software. Enquire Now
+Bio Metric Machine: Get Bio Metric Machine Free with School Software. Condition Applied. Enquire Now`,
+    image: '/Attendance_Software.webp' 
   },
   { 
     _id: '4', 
