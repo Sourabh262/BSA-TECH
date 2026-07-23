@@ -10,7 +10,7 @@ const products = [
     category: 'Education ERP',
     description: 'SaaS based Application for the Schools inbuilt with Automatic SMS Notifications, Digital Marksheet, Digital TC, Online Payment Fees and Mobile App.',
     features: ['CBSE/ICSE Digital Marksheet', 'Automatic SMS', '100% Cloud Based', 'No Setup Cost'],
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800',
+    image: '/sagokoom.webp',
   },
   {
     id: 2,

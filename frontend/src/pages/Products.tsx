@@ -49,11 +49,8 @@ Functionalities & Features:
 • Data Back Up Facility on One Click.
 • 99.5% Up - Time SLA.
 • Responsive Application – Accessible on all Browser, Smart Phones and Tablets
-• Transactional SMS (active on DND) with Sender ID in a year.
-
-Interested In SaĝoKomm Service ! Great.. Let Us help You....
-Get In Touch ! or Call us at 8840854007`,
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800' 
+• Transactional SMS (active on DND) with Sender ID in a year.`,
+    image: '/sagokoom.webp' 
   },
   { _id: '2', name: 'FinTrack Analytics', slug: 'fintrack', category: 'Finance', description: 'Advanced financial tracking and predictive analytics dashboard.', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
   { _id: '3', name: 'HR Connect', slug: 'hr-connect', category: 'Human Resources', description: 'Streamline your human resources and recruitment processes globally.', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }
@@ -162,6 +159,22 @@ const Products = () => {
               <p className="text-slate-600 text-lg leading-relaxed whitespace-pre-wrap mb-8">
                 {selectedProduct.description}
               </p>
+
+              {selectedProduct.slug === 'sagokomm' && (
+                <div className="mt-8 mb-6">
+                  <h3 className="text-xl font-bold text-slate-800 mb-4">Modules, Plans & Pricing</h3>
+                  <img src="/plans-and-pricing.webp" alt="SaĝoKomm Plans & Pricing" className="w-full rounded-xl shadow-md border border-slate-200 mb-8" />
+                  
+                  <div className="bg-red-500 text-white rounded-2xl p-8 text-center shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h4 className="text-xl font-semibold mb-2">Interested In SaĝoKomm Service! Great.. Let Us help You....</h4>
+                    <p className="mb-6">Landing from Facebook Page Offer, Please fill the Form by Clicking Below.</p>
+                    <Link to="/contact" className="inline-block bg-white text-red-600 font-bold uppercase tracking-wider py-3 px-8 rounded-full shadow-md hover:bg-slate-100 transition-colors mb-4">
+                      Get In Touch !
+                    </Link>
+                    <p className="font-semibold text-lg">or Call us at 8840854007</p>
+                  </div>
+                </div>
+              )}
               
               <div className="flex justify-end gap-4 border-t border-slate-200 pt-6 mt-6">
                 <button onClick={() => setSelectedProduct(null)} className="px-6 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200">Close</button>
