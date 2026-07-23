@@ -38,9 +38,14 @@ const Services = () => {
     const fetchServices = async () => {
       try {
         const { data } = await api.get('/services');
-        setServices(data);
+        if (data && data.length > 0) {
+          setServices([...data, ...fallbackServices] as any);
+        } else {
+          setServices(fallbackServices as any);
+        }
       } catch (error) {
         console.error('Failed to fetch services', error);
+        setServices(fallbackServices as any);
       } finally {
         setLoading(false);
       }
