@@ -57,8 +57,42 @@ Functionalities & Features:
     name: 'Library Management Software', 
     slug: 'library-management', 
     category: 'Education ERP',
-    description: 'Digital Solutions which help the organisation to manage the work of Library on a single click. (Detailed content pending)',
-    image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800' 
+    description: `bsa Team Library Management Software Is The Integrated Software Which Used To Catalog, Track Circulation & Inventory A Library's Assets. It Is The Software Which Manages The Library Day To Day Work. You Can See The Library Inventory With The Quantity Of Books, You Can Issue The Books And Can Track It For The Same. SCS LBMS Offers A Unique Blend To Drastically Reduce The Total Cost Of Ownership While Providing The Impetus For Business Growth, Results Based Computing And Managed Information Delivery. It Provides A 360 Degree View With All The Features And Functionalities Of The Customer Preferences.
+
+One Click Result Oriented Based Reports. Digital Reports based on Books Issue, Returns and Damaged. Automatic Notifications through SMS and Secure Online Data.
+
+Major Functionalities:
+• 24*7*365 Automatic SMS Notifications
+• Automatic Calculation of Late Fine Charges
+• Dues Slip Available only after the Clear of Dues
+• Alert Notifications on Book Return Date
+• Data Security with SiteLock Secure
+• Cloud Based Software as to avoid Data Loss
+• Customisation Available on Dashboard, Fine Charges, etc.
+• Book Damage or Lost Report separately.
+• Digital Reports - can access the old session data also
+• One Click Report
+
+Modules:
+❖ Book Keeping ❖ Issue of Books ❖ Return of Books ❖ Fine Management ❖ No Dues Slip ❖ Search Books ❖ Barcode Feature
+
+Features:
+• 100% Cloud Based ERP.
+• Available Both Offline & Online Version.
+• No Setup & Installation Cost For Online.
+• Free Training (Training Twice in 1st Year and once with every update).
+• Data Export to Excel and Print Feature is available with every Report on One Click.
+• Data Back Up Facility on One Click.
+• 99.5% Up - Time SLA.
+• Responsive Application – Accessible on all Browser, Smart Phones and Tablets
+• For Online, Server Charges will be chargeable extra.
+• Hardware Charges Extra.
+• Pricing varies as per the Software Requirement.
+
+Recent Offers !
+Website at Rs.18999/- only with School Software. Enquire Now
+Bio Metric Machine: Get Bio Metric Machine Free with School Software. Condition Applied. Enquire Now`,
+    image: '/Library_Banner.webp' 
   },
   { 
     _id: '3', 
