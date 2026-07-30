@@ -18,12 +18,13 @@ export const getTestimonials = async (req: Request, res: Response) => {
 // @access  Private
 export const createTestimonial = async (req: Request, res: Response) => {
   try {
-    const { name, description, image } = req.body;
+    const { name, description, image, rating } = req.body;
 
     const testimonial = new Testimonial({
       name,
       description,
       image,
+      rating,
     });
 
     const createdTestimonial = await testimonial.save();
@@ -38,7 +39,7 @@ export const createTestimonial = async (req: Request, res: Response) => {
 // @access  Private
 export const updateTestimonial = async (req: Request, res: Response) => {
   try {
-    const { name, description, image } = req.body;
+    const { name, description, image, rating } = req.body;
 
     const testimonial = await Testimonial.findById(req.params.id);
 
@@ -46,6 +47,7 @@ export const updateTestimonial = async (req: Request, res: Response) => {
       testimonial.name = name || testimonial.name;
       testimonial.description = description || testimonial.description;
       testimonial.image = image || testimonial.image;
+      if (rating !== undefined) testimonial.rating = rating;
 
       const updatedTestimonial = await testimonial.save();
       res.json(updatedTestimonial);
