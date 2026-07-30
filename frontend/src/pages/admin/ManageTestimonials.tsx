@@ -120,46 +120,48 @@ const ManageTestimonials = () => {
         <div className="flex justify-center p-12"><Loader2 className="animate-spin text-emerald-500" size={32} /></div>
       ) : (
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 text-sm">
-                <th className="px-6 py-4 font-semibold">Image</th>
-                <th className="px-6 py-4 font-semibold">Name</th>
-                <th className="px-6 py-4 font-semibold">Description</th>
-                <th className="px-6 py-4 font-semibold text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {testimonials.length === 0 ? (
-                <tr>
-                  <td colSpan={4} className="px-6 py-8 text-center text-slate-500">
-                    No testimonials found. Click "Add Testimonial" to create one.
-                  </td>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 text-sm">
+                  <th className="px-6 py-4 font-semibold">Image</th>
+                  <th className="px-6 py-4 font-semibold">Name</th>
+                  <th className="px-6 py-4 font-semibold">Description</th>
+                  <th className="px-6 py-4 font-semibold text-right">Actions</th>
                 </tr>
-              ) : (
-                testimonials.map((testimonial) => (
-                  <tr key={testimonial._id} className="border-b border-slate-100 hover:bg-slate-50">
-                    <td className="px-6 py-4">
-                      <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full object-cover border border-slate-200" />
-                    </td>
-                    <td className="px-6 py-4 font-medium text-slate-800">{testimonial.name}</td>
-                    <td className="px-6 py-4 text-slate-500 max-w-xs truncate">{testimonial.description}</td>
-                    <td className="px-6 py-4 flex justify-end gap-3 items-center mt-2">
-                      <button onClick={() => openEditModal(testimonial)} className="text-blue-500 hover:bg-blue-50 p-2 rounded-md transition-colors">
-                        <Edit2 size={18} />
-                      </button>
-                      <button 
-                        onClick={() => handleDelete(testimonial._id)}
-                        className="text-red-500 hover:bg-red-50 p-2 rounded-md transition-colors"
-                      >
-                        <Trash2 size={18} />
-                      </button>
+              </thead>
+              <tbody>
+                {testimonials.length === 0 ? (
+                  <tr>
+                    <td colSpan={4} className="px-6 py-8 text-center text-slate-500">
+                      No testimonials found. Click "Add Testimonial" to create one.
                     </td>
                   </tr>
-                ))
-              )}
-            </tbody>
-          </table>
+                ) : (
+                  testimonials.map((testimonial) => (
+                    <tr key={testimonial._id} className="border-b border-slate-100 hover:bg-slate-50">
+                      <td className="px-6 py-4">
+                        <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full object-cover border border-slate-200" />
+                      </td>
+                      <td className="px-6 py-4 font-medium text-slate-800">{testimonial.name}</td>
+                      <td className="px-6 py-4 text-slate-500 max-w-xs truncate">{testimonial.description}</td>
+                      <td className="px-6 py-4 flex justify-end gap-3 items-center mt-2">
+                        <button onClick={() => openEditModal(testimonial)} className="text-blue-500 hover:bg-blue-50 p-2 rounded-md transition-colors">
+                          <Edit2 size={18} />
+                        </button>
+                        <button 
+                          onClick={() => handleDelete(testimonial._id)}
+                          className="text-red-500 hover:bg-red-50 p-2 rounded-md transition-colors"
+                        >
+                          <Trash2 size={18} />
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
 

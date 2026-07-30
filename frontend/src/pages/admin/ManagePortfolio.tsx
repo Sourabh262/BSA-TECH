@@ -134,50 +134,52 @@ const ManagePortfolio = () => {
         <div className="flex justify-center p-12"><Loader2 className="animate-spin text-emerald-500" size={32} /></div>
       ) : (
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 text-sm">
-                <th className="px-6 py-4 font-semibold">Title</th>
-                <th className="px-6 py-4 font-semibold">Client</th>
-                <th className="px-6 py-4 font-semibold">Status</th>
-                <th className="px-6 py-4 font-semibold text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {items.length === 0 ? (
-                <tr>
-                  <td colSpan={4} className="px-6 py-8 text-center text-slate-500">
-                    No portfolio items found. Click "Add New Item" to create one.
-                  </td>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 text-sm">
+                  <th className="px-6 py-4 font-semibold">Title</th>
+                  <th className="px-6 py-4 font-semibold">Client</th>
+                  <th className="px-6 py-4 font-semibold">Status</th>
+                  <th className="px-6 py-4 font-semibold text-right">Actions</th>
                 </tr>
-              ) : (
-                items.map((item) => (
-                  <tr key={item._id} className="border-b border-slate-100 hover:bg-slate-50">
-                    <td className="px-6 py-4 font-medium text-slate-800">
-                      <div className="flex items-center gap-3">
-                        {item.image && <img src={item.image} alt={item.title} className="w-10 h-10 rounded-md object-cover border border-slate-200" />}
-                        {item.title}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-slate-500">{item.client || '-'}</td>
-                    <td className="px-6 py-4">
-                      <span className={`px-2 py-1 rounded-full text-xs font-semibold ${item.isActive ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-700'}`}>
-                        {item.isActive ? 'Active' : 'Draft'}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 flex justify-end gap-3">
-                      <button onClick={() => openEditModal(item)} className="text-blue-500 hover:bg-blue-50 p-2 rounded-md transition-colors">
-                        <Edit2 size={18} />
-                      </button>
-                      <button onClick={() => handleDelete(item._id)} className="text-red-500 hover:bg-red-50 p-2 rounded-md transition-colors">
-                        <Trash2 size={18} />
-                      </button>
+              </thead>
+              <tbody>
+                {items.length === 0 ? (
+                  <tr>
+                    <td colSpan={4} className="px-6 py-8 text-center text-slate-500">
+                      No portfolio items found. Click "Add New Item" to create one.
                     </td>
                   </tr>
-                ))
-              )}
-            </tbody>
-          </table>
+                ) : (
+                  items.map((item) => (
+                    <tr key={item._id} className="border-b border-slate-100 hover:bg-slate-50">
+                      <td className="px-6 py-4 font-medium text-slate-800">
+                        <div className="flex items-center gap-3">
+                          {item.image && <img src={item.image} alt={item.title} className="w-10 h-10 rounded-md object-cover border border-slate-200" />}
+                          {item.title}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-slate-500">{item.client || '-'}</td>
+                      <td className="px-6 py-4">
+                        <span className={`px-2 py-1 rounded-full text-xs font-semibold ${item.isActive ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-700'}`}>
+                          {item.isActive ? 'Active' : 'Draft'}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 flex justify-end gap-3">
+                        <button onClick={() => openEditModal(item)} className="text-blue-500 hover:bg-blue-50 p-2 rounded-md transition-colors">
+                          <Edit2 size={18} />
+                        </button>
+                        <button onClick={() => handleDelete(item._id)} className="text-red-500 hover:bg-red-50 p-2 rounded-md transition-colors">
+                          <Trash2 size={18} />
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
 
