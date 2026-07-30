@@ -7,6 +7,7 @@ interface Testimonial {
   name: string;
   description: string;
   image: string;
+  rating?: number;
 }
 
 const ManageTestimonials = () => {
@@ -18,6 +19,7 @@ const ManageTestimonials = () => {
     name: '',
     description: '',
     image: '',
+    rating: 5,
   });
 
   const [uploading, setUploading] = useState(false);
@@ -62,7 +64,7 @@ const ManageTestimonials = () => {
 
   const openCreateModal = () => {
     setEditingId(null);
-    setFormData({ name: '', description: '', image: '' });
+    setFormData({ name: '', description: '', image: '', rating: 5 });
     setIsModalOpen(true);
   };
 
@@ -72,6 +74,7 @@ const ManageTestimonials = () => {
       name: testimonial.name,
       description: testimonial.description || '',
       image: testimonial.image || '',
+      rating: testimonial.rating || 5,
     });
     setIsModalOpen(true);
   };
@@ -126,6 +129,7 @@ const ManageTestimonials = () => {
                 <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 text-sm">
                   <th className="px-6 py-4 font-semibold">Image</th>
                   <th className="px-6 py-4 font-semibold">Name</th>
+                  <th className="px-6 py-4 font-semibold">Rating</th>
                   <th className="px-6 py-4 font-semibold">Description</th>
                   <th className="px-6 py-4 font-semibold text-right">Actions</th>
                 </tr>
@@ -144,6 +148,13 @@ const ManageTestimonials = () => {
                         <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full object-cover border border-slate-200" />
                       </td>
                       <td className="px-6 py-4 font-medium text-slate-800">{testimonial.name}</td>
+                      <td className="px-6 py-4">
+                        <div className="flex text-yellow-400">
+                          {[...Array(5)].map((_, i) => (
+                            <span key={i}>{i < (testimonial.rating || 5) ? '★' : '☆'}</span>
+                          ))}
+                        </div>
+                      </td>
                       <td className="px-6 py-4 text-slate-500 max-w-xs truncate">{testimonial.description}</td>
                       <td className="px-6 py-4 flex justify-end gap-3 items-center mt-2">
                         <button onClick={() => openEditModal(testimonial)} className="text-blue-500 hover:bg-blue-50 p-2 rounded-md transition-colors">
@@ -187,6 +198,21 @@ const ManageTestimonials = () => {
                   value={formData.description}
                   onChange={(e) => setFormData({...formData, description: e.target.value})}
                 />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Rating</label>
+                <div className="flex gap-2">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      onClick={() => setFormData({...formData, rating: star})}
+                      className={`text-2xl focus:outline-none ${star <= formData.rating ? 'text-yellow-400' : 'text-slate-300'}`}
+                    >
+                      ★
+                    </button>
+                  ))}
+                </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Client Image</label>

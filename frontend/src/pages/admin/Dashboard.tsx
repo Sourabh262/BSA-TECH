@@ -1,12 +1,35 @@
-import React from 'react';
-import { Users, Layers, Box, Briefcase } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Users, Layers, Box, Briefcase, Loader2 } from 'lucide-react';
+import api from '../../utils/api';
 
 const Dashboard = () => {
+  const [data, setData] = useState({
+    totalServices: 0,
+    activeProducts: 0,
+    portfolioItems: 0,
+    contactMessages: 0,
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const res = await api.get('/stats');
+        setData(res.data);
+      } catch (error) {
+        console.error('Failed to fetch stats', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchStats();
+  }, []);
+
   const stats = [
-    { label: 'Total Services', value: '4', icon: <Layers className="text-blue-500" size={32} />, bg: 'bg-blue-50' },
-    { label: 'Active Products', value: '12', icon: <Box className="text-emerald-500" size={32} />, bg: 'bg-emerald-50' },
-    { label: 'Portfolio Items', value: '24', icon: <Briefcase className="text-purple-500" size={32} />, bg: 'bg-purple-50' },
-    { label: 'Contact Messages', value: '148', icon: <Users className="text-orange-500" size={32} />, bg: 'bg-orange-50' },
+    { label: 'Total Services', value: data.totalServices, icon: <Layers className="text-blue-500" size={32} />, bg: 'bg-blue-50' },
+    { label: 'Active Products', value: data.activeProducts, icon: <Box className="text-emerald-500" size={32} />, bg: 'bg-emerald-50' },
+    { label: 'Portfolio Items', value: data.portfolioItems, icon: <Briefcase className="text-purple-500" size={32} />, bg: 'bg-purple-50' },
+    { label: 'Contact Messages', value: data.contactMessages, icon: <Users className="text-orange-500" size={32} />, bg: 'bg-orange-50' },
   ];
 
   return (

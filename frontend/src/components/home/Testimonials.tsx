@@ -9,6 +9,7 @@ const hardcodedTestimonials = [
     role: 'Client',
     content: 'BSA tech is a professional company with a team of dedicated developers the output is awesome commendable work congrats and keep it up.',
     image: '/Dinesh Negi.webp',
+    rating: 5,
   },
   {
     id: 'h2',
@@ -16,6 +17,7 @@ const hardcodedTestimonials = [
     role: 'Client',
     content: 'BSA team does more than we ask or say , their customer services is excellent and fast and their knowledge woth the ability of resolving the issue is commendable. I always recomment customer to opt swanky team for the IT services.I am very happy with my dynamic website and the support of that.',
     image: '/Fr.Anil.webp',
+    rating: 5,
   },
   {
     id: 'h3',
@@ -23,6 +25,7 @@ const hardcodedTestimonials = [
     role: 'Client',
     content: 'I most strongly recommend the services of the BSA team for its school software. Swanky team is not only thorough but also easy to work with, and always willing to take the time to discuss my concerns and respond to questions.',
     image: '/female-anon.webp',
+    rating: 5,
   }
 ];
 
@@ -40,7 +43,8 @@ const Testimonials = () => {
           name: t.name,
           role: 'Client',
           content: t.description,
-          image: t.image
+          image: t.image,
+          rating: t.rating || 5
         }));
         setDynamicTestimonials(formatted);
       } catch (error) {
@@ -150,7 +154,7 @@ const Testimonials = () => {
               
               <div className="flex gap-1 mb-4 relative z-10">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className={`w-4 h-4 ${i < (testimonial.rating || 5) ? 'fill-yellow-400 text-yellow-400' : 'fill-slate-200 text-slate-200'}`} />
                 ))}
               </div>
               
