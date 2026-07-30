@@ -12,7 +12,7 @@ const Login = () => {
 
   // Redirect if already logged in
   useEffect(() => {
-    if (localStorage.getItem('adminToken')) {
+    if (sessionStorage.getItem('adminToken')) {
       navigate('/admin');
     }
   }, [navigate]);
@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
       const { data } = await api.post('/auth/login', { email, password });
-      localStorage.setItem('adminToken', data.token);
+      sessionStorage.setItem('adminToken', data.token);
       navigate('/admin');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Invalid email or password');
@@ -101,10 +101,6 @@ const Login = () => {
               )}
             </button>
           </form>
-
-          <div className="mt-6 text-center text-sm text-slate-500">
-            <p>Admin Login: <br/> Email: <b>admin@bsatech.in</b> <br/> Pass: <b>admin123</b> (Default)</p>
-          </div>
         </div>
       </div>
     </div>

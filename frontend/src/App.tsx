@@ -32,7 +32,7 @@ const NotFound = () => (
 );
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  const token = localStorage.getItem('adminToken');
+  const token = sessionStorage.getItem('adminToken');
   if (!token) {
     return <Navigate to="/admin/login" replace />;
   }
