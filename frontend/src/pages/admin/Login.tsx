@@ -90,7 +90,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-lg shadow-primary-500/30 disabled:opacity-70"
+              className="w-full flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-blue-600 font-semibold py-3 px-4 rounded-xl transition-all shadow-lg shadow-primary-500/30 disabled:opacity-70"
             >
               {loading ? (
                 <Loader2 className="animate-spin" size={20} />
